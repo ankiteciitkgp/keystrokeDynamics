@@ -6,8 +6,7 @@ Keystroke dynamics is the study of whether people can be distinguished by their 
 The methods for collecting the data, extracting the features and building the classifier
 are described in this section.
 ### 1.2.1 Data Acquisition
-A keylogger was used to collect the keystroke data for all the group members. This was
-collected in the form of :
+A keylogger was used to collect the keystroke data for all the group members. This was collected in the form of :
 
 • ”Key Event” - whether a button was pressed or released
 • ”Key Code” - which button was pressed
@@ -16,6 +15,8 @@ collected in the form of :
 
 ### 1.2.2 Feature Extraction
 A custom-built feature extractor was used in the pipeline for extracting a set of 18 features from the keylogger data. These features are characteristic of an user’s typing pattern. The keyboard was divided into two parts as per the convention in (Figure 1.1).
+
+![keyboard finger positon](https://github.com/ankiteciitkgp/keystrokeDynamics/blob/master/keyboard.png)
 
 The extracted features can be classified into four different categories : 
 • Latency: It is defined as the time interval between ”KEY DOWN” event (pressing) of two consecutive key strokes
@@ -27,8 +28,11 @@ The difference between timestamps aided in providing latency and hold times that
 The mean values of the latency and hold times of a bin for the combination of keys are considered as an observation vector. A bin is considered as a valid bin if it contains more than 100 events within it, barring which it is discarded and the next bin is constructed. Additional features considered were the no. of backspaces per character of the user. This gives a sense of how prone to typing mistakes a user is and reflects mood of the user, although testing for this feature gives inconsistent results as this feature may also reflect the current nature of the text being typed and varied widely for the same user. Another feature used is the cpm(characters per minute), which reflects the typing speed of a user and which gives a distinction among several users. The cpm feature was considered in only those bins where the user typed more than 50 valid characters so as to give a true sense of a user’s typing speed.
 The extracted features are shown in the Table 1.1. 
 
+
+![Table 1.1](https://github.com/ankiteciitkgp/keystrokeDynamics/blob/master/featureTable.png)
+
 ### 1.2.3 Feature Engineering
-For getting better output, the attributes and the data were pre-processed. First, the unnecessary keys captured by the Keylogger, such as keys used for navigation, were filtered out as they did not have any significance in determining an user’s typing pattern. Any missing values of an attribute for an observation bin are filled in by the mean of the corresponding features from the other bins. (*Filling in the missing values with the median results in a lower training and test accuracy) The data collected in this format gives us an observation vector wherein the user continuously types a stream of text, as opposed to the method of collecting latency data of character combinations at different time stamps and including them in a single obser-
+First, the unnecessary keys captured by the Keylogger, such as keys used for navigation, were filtered out as they did not have any significance in determining an user’s typing pattern. Any missing values of an attribute for an observation bin are filled in by the mean of the corresponding features from the other bins. (*Filling in the missing values with the median results in a lower training and test accuracy) The data collected in this format gives us an observation vector wherein the user continuously types a stream of text, as opposed to the method of collecting latency data of character combinations at different time stamps and including them in a single obser-
 vation vector. The former proposed method which gives a more accurate and intuitive sense of the typing pattern of an user.
 
 ## 1.3 Classifier
