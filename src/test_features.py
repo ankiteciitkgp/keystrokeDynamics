@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Oct 31 18:20:53 2015
-
-@author: Naman
-"""
-
 import numpy as np
 import pandas as pd
 import csv

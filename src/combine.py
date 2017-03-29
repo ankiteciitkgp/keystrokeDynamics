@@ -1,10 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 27 21:53:58 2015
-
-@author: Naman
-"""
-
+#Combining data of different users to single data file 
 import pandas as pd
 
 

@@ -1,13 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Oct 12 18:31:53 2015
-
-@author: Naman
-"""
+#Code to calculate time difference from timestamps of keystroke dynamics data
 import re
-
-
-
 
 def monthvalue(date):
     return{

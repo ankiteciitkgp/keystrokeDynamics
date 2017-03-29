@@ -1,10 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 28 17:44:34 2015
-
-@author: Naman
-"""
-
+#Clustering code using GMM classfier
 import numpy as np
 import pandas as pd
 from sklearn.externals.six.moves import xrange

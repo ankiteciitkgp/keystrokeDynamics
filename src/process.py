@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 13 03:58:28 2015
-
-@author: Naman
-"""
+#
 from collections import defaultdict
 
 def categorize(chars):
